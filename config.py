@@ -1,3 +1,6 @@
+## -- PRIVATE_SCENARIOS is where I put my own silly scenarios that are best left uncommited
+from private_config import PRIVATE_SCENARIOS
+
 basic_rules = "do not tell me that you are ai language model and \
     do not tell me about your limitations as an ai language model. \
         If you understand, say ok."
@@ -21,3 +24,5 @@ SCENARIOS={
         f"{basic_rules}",
 
 }
+
+SCENARIOS.update(PRIVATE_SCENARIOS)
