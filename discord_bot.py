@@ -18,7 +18,7 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print(f'Logged on as {client.user}!')
 
-#-- listen for messages
+# -- listen for messages
 @client.event
 async def on_message(message):
     global message_history
@@ -36,5 +36,5 @@ async def on_message(message):
 
     await message.channel.send(response)
 
-#-- Run the bot
+# -- Run the bot
 client.run(discord_bot_token)
