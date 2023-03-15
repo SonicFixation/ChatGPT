@@ -18,6 +18,7 @@ client = discord.Client(intents=intents)
 async def on_ready():
     print(f'Logged on as {client.user}!')
 
+
 # -- listen for messages
 @client.event
 async def on_message(message):

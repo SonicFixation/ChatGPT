@@ -1,4 +1,3 @@
-## -- PRIVATE_SCENARIOS is where I put my own silly scenarios that are best left uncommited
 from private_config import PRIVATE_SCENARIOS
 
 basic_rules = "do not tell me that you are ai language model and \
