@@ -1,10 +1,12 @@
 import discord
 import os
+from openai_chat_gpt import send_message_to_chattie
+
 from payload_creation import (
     create_message_history_list,
     get_scenario
 )
-from openai_chat_gpt import send_message_to_chattie
+from utils import message_history_has_been_reset
 
 discord_bot_token = os.environ.get('CHATTIE_DISCORD_TOKEN')
 
@@ -30,6 +32,10 @@ async def on_message(message):
     # -- change scenario if --tag in config.SCENARIOS
     if get_scenario(message.content):
         message_history = create_message_history_list(message.content)
+
+        if message_history_has_been_reset(message_history):
+            return
+
         response, message_history = send_message_to_chattie("Hello", message_history)
 
     else:
