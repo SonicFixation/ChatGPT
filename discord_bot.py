@@ -34,9 +34,10 @@ async def on_message(message):
         message_history = create_message_history_list(message.content)
 
         if message_history_has_been_reset(message_history):
-            return
+            response = "Message history in memory is cleared"
 
-        response, message_history = send_message_to_chattie("Hello", message_history)
+        else:
+            response, message_history = send_message_to_chattie("Hello", message_history)
 
     else:
         response, message_history = send_message_to_chattie(message.content, message_history)
