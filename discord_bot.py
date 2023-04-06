@@ -1,6 +1,7 @@
 import discord
 import os
 import textwrap
+import time
 from openai_chat_gpt import send_message_to_chattie
 from payload_creation import (
     create_message_history_list,
@@ -47,6 +48,7 @@ async def on_message(message):
         response_chunks = textwrap.wrap(response, width=2000, break_long_words=False)
         for chunk in response_chunks:
             await message.channel.send(chunk)
+            time.sleep(1)
 
     else:
         await message.channel.send(response)
