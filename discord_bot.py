@@ -46,7 +46,7 @@ async def on_message(message):
 
     if len(response) > 2000:
         # Break long responses into smaller chinks so Discord won't complain
-        response_chunks = textwrap.wrap(response, width=2000, break_long_words=False)
+        response_chunks = textwrap.wrap(response, width=1990, break_long_words=False)
         formatting_auto_finished = False
         for chunk in response_chunks:
             # if started code formatting but not finished, finish in this chunk
