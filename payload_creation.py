@@ -1,7 +1,8 @@
-from config import SCENARIOS
+from config import get_all_scenarios
 
 # -- get scenario prompt from config
 def get_scenario(input):
+    SCENARIOS = get_all_scenarios()
     return SCENARIOS.get(input)
 
 
